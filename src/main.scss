@@ -1,0 +1,39 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #040714;
+    color: #c0c0c0;
+    font-family: Avenir, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
