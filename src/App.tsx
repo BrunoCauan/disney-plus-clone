@@ -1,10 +1,16 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import LandingPage from './pages/LandingPage';
 
 function App() {
     return (
-        <div className="App">
-            Disney+ Clone
-        </div>
-    )
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/home" element={<div>Home</div>} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
