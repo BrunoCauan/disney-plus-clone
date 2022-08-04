@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const CTAComponent = styled.a`
-    padding: 20.5px 33px;
+    padding: 11.5px 24px;
     width: 100%;
     align-items: center;
     border-radius: 4px;
@@ -27,6 +27,10 @@ const CTAComponent = styled.a`
         opacity: .7;
         transform: scale(.97);
         transition: 0s;
+    }
+
+    @media only screen and (min-width: 769px) {
+        padding: 20.5px 33px;
     }
 `;
 

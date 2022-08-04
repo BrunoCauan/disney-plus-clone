@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CTA from '../components/CTA';
+import CTA from '../styled/CTA';
 import PlanOption from '../components/PlanOption';
 import { Plan } from '../models/Plan.model';
 
@@ -33,7 +33,9 @@ const LandingPage = () => {
 
             <HeroContent>
                 <h3>As melhores histórias em um só lugar.</h3>
+
                 <HeroLogo src="/images/disney-logo.svg" alt="Disney Logo" />
+
                 <CTA href="#plan-selector">Escolha Seu Plano</CTA>
             </HeroContent>
         </HeroContainer>
@@ -42,8 +44,8 @@ const LandingPage = () => {
             <Content>
                 <h1>Escolha seu Plano</h1>
 
-                <PlansList>
-                    {plans.map(plan => <PlanOption plan={plan}></PlanOption>)}
+                <PlansList id="plan-selector">
+                    { plans.map(plan => <PlanOption plan={plan} key={plan.type}/>) }
                 </PlansList>
             </Content>
         </Container>
@@ -77,12 +79,12 @@ const Content = styled.section`
 `;
 
 const HeroContainer = styled(Container)`
-    @media only screen and (min-width: 1025px) {
-        align-items: flex-start;
-    }
-    
     @media screen and (max-width: 1024px) {
         padding-top: 54vw;
+    }
+    
+    @media only screen and (min-width: 1025px) {
+        align-items: flex-start;
     }
 `;
 
@@ -93,7 +95,7 @@ interface HeroBackgroundProps {
 
 const HeroBackground = styled.div<HeroBackgroundProps>`
     display: none;
-    background-image: url(${props => props.background});
+    background-image: url(${ props => props.background });
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
@@ -105,14 +107,12 @@ const HeroBackground = styled.div<HeroBackgroundProps>`
     position: absolute;
     z-index: -1;
 
-    @media only screen and (${props => props.media}) {
+    @media only screen and (${ props => props.media }) {
         display: block;
     }
 `;
 
 const HeroContent = styled(Content)`
-    max-width: 600px;
-
     @media only screen and (min-width: 1025px) {
         width: 50%;
     }
@@ -137,6 +137,12 @@ const PlansList = styled.ul`
     justify-content: space-around;
     margin: 0;
     padding: 0;
+    width: 100%;
+
+    @media only screen and (max-width: 769px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export default LandingPage;
